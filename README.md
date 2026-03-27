@@ -1,5 +1,7 @@
 # NeuroFarmac: Plataforma Integrada de Neurofarmacología en un Chip
 
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
 **Sistema in vitro para evaluación de fármacos cerebrales con barrera hematoencefálica funcional y monitoreo electrofisiológico en tiempo real.**
 
 NeuroFarmac integra organoides cerebrales humanos 3D, una barrera hematoencefálica (BHE) funcional y arreglos de microelectrodos (MEA) para evaluar la eficacia y neurotoxicidad de fármacos con relevancia fisiológica.

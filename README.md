@@ -1,129 +1,111 @@
-# NeuroFarmac: Plataforma Integrada de Neurofarmacología en un Chip
+# NeuroFarmac: Plataforma de neurofarmacología en un chip
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19393993.svg)](https://doi.org/10.5281/zenodo.19393993)
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
+[![EN](https://img.shields.io/badge/English-version-blue.svg)](./README.en.md)
 
-**Sistema in vitro para evaluación de fármacos cerebrales con barrera hematoencefálica funcional y monitoreo electrofisiológico en tiempo real.**
+**Un sistema in vitro que combina organoides cerebrales, barrera hematoencefálica funcional y monitoreo eléctrico para evaluar fármacos sin usar animales.**
 
-NeuroFarmac integra organoides cerebrales humanos 3D, una barrera hematoencefálica (BHE) funcional y arreglos de microelectrodos (MEA) para evaluar la eficacia y neurotoxicidad de fármacos con relevancia fisiológica.
+## ¿Qué problema resuelve?
 
----
+Los fármacos para enfermedades cerebrales (Alzheimer, Parkinson, epilepsia, etc.) fallan en un 90% porque los modelos actuales no predicen lo que pasa en el cerebro humano:
 
-## Problema que Resuelve
+- Células en placa (2D) no se parecen al tejido cerebral real.
+- Animales no son humanos: lo que funciona en ratones, falla en personas.
+- No se mide si el fármaco cruza la barrera hematoencefálica (BHE).
+- Las pruebas tradicionales miden muerte celular, no actividad neuronal.
 
-- **Modelos actuales:** Pruebas en células 2D no predicen respuesta en cerebro humano; modelos animales son costosos, éticamente complejos y a menudo no trasladables.
-- **Barrera hematoencefálica:** La mayoría de los fármacos candidatos no alcanzan el cerebro porque no se evalúa su capacidad de cruzar la BHE.
-- **Monitoreo funcional:** Las pruebas tradicionales miden muerte celular, no modificaciones en la actividad de redes neuronales (que es lo que determina eficacia en enfermedades neurológicas).
+**NeuroFarmac resuelve todo eso en un solo sistema.**
 
-**NeuroFarmac permite evaluar en un solo sistema:** cruce de BHE, interacción con tejido cerebral, y modulación de actividad neuronal en tiempo real.
+## ¿Qué hace?
 
----
+| Componente | Función |
+|------------|---------|
+| **Organoide cerebral humano 3D** | Tejido cerebral en miniatura (2–4 mm) con neuronas y glía |
+| **Barrera hematoencefálica (BHE) funcional** | Simula el filtro que los fármacos deben cruzar |
+| **Microelectrodos (MEA) de alta densidad** | Monitorea la actividad eléctrica de las neuronas en tiempo real |
 
-## Arquitectura (Tres Capas Integradas)
+El fármaco se inyecta en el flujo, cruza la BHE (o no), llega al organoide, y los electrodos miden si la actividad neuronal cambia.
 
-| Capa | Función | Especificación |
-|------|---------|----------------|
-| **1. Interfaz Vascular** | Simula flujo sanguíneo, sostiene co-cultivo de células de BHE | Microfluidos con flujo pulsátil (0.5–5 µL/min), endotelio + pericitos + astrocitos |
-| **2. Tejido Neural** | Sustrato biológico de prueba | Organoide cerebral humano 3D (células madre pluripotentes), 2–4 mm diámetro, 6–12 meses maduración |
-| **3. Lectura Electrofisiológica** | Monitoreo en tiempo real | MEA de alta densidad (256 electrodos, 20 µm espaciado), muestreo >20 kHz, impedancia <1 MΩ |
+## ¿Qué se puede evaluar?
 
----
+- **Permeabilidad de BHE**: ¿el fármaco cruza la barrera?
+- **Efecto sobre actividad neuronal**: ¿aumenta? ¿disminuye? ¿desincroniza?
+- **Toxicidad funcional**: ¿la red neuronal colapsa? ¿se recupera?
 
-## Principio de Operación
+## ¿Para quién es?
 
-
-Fármaco en flujo → Cruce de BHE → Interacción con organoide → Lectura en MEA → Análisis de datos
-
-
-El sistema permite evaluar:
-- **Permeabilidad de BHE:** ¿Qué fracción del fármaco llega al compartimiento cerebral?
-- **Efecto sobre actividad neuronal:** ¿Aumenta? ¿Disminuye? ¿Desincroniza?
-- **Toxicidad funcional:** ¿La red neuronal colapsa? ¿Hay recuperación?
-
----
-
-## Especificaciones Técnicas
-
-### Microfluidos (Capa Vascular)
-
-| Parámetro | Valor |
-|-----------|-------|
-| Flujo | Pulsátil, 0.5–5 µL/min (ajustable) |
-| Material | PDMS (polidimetilsiloxano) o vidrio grabado |
-| Canales | 100–200 µm ancho, 50–100 µm alto |
-| Células BHE | Endotelio (hCMEC/D3), pericitos, astrocitos (co-cultivo) |
-| Temperatura | 37°C |
-| CO₂ | 5% |
-
-### Organoide Cerebral
-
-| Parámetro | Valor |
-|-----------|-------|
-| Origen | Células madre pluripotentes inducidas (iPSC) |
-| Diámetro | 2–4 mm (maduro) |
-| Tiempo de maduración | 6–12 meses |
-| Control de calidad | Inmunocitoquímica para marcadores neuronales, astrocíticos y de progenitores |
-
-### Arreglo de Microelectrodos (MEA)
-
-| Parámetro | Valor |
-|-----------|-------|
-| Número de electrodos | 256–1024 |
-| Espaciado | 20–50 µm |
-| Impedancia | <1 MΩ (a 1 kHz) |
-| Frecuencia de muestreo | >20 kHz |
-| Amplificación | ×1000–×5000 |
-
----
-
-## Validación Científica
-
-Basado en estudios revisados por pares:
-
-- **Organoides cerebrales:** Lancaster, M.A., & Knoblich, J.A. (2014). *Generation of cerebral organoids from human pluripotent stem cells*. Nature Protocols, 9(10), 2329–2340.
-- **BHE en chip:** Bang, S., et al. (2021). *A microphysiological system for the evaluation of drug delivery across the blood-brain barrier*. Lab on a Chip, 21(12), 2386–2397.
-- **MEA para redes neuronales:** Obien, M.E.J., et al. (2015). *Revealing neuronal function through microelectrode array recordings*. Frontiers in Neuroscience, 8, 423.
-
----
+- Laboratorios de neurociencia y farmacología.
+- Compañías farmacéuticas que desarrollan fármacos cerebrales.
+- Centros de investigación en enfermedades neurológicas.
+- Reguladores que necesitan datos más fiables que los modelos animales.
 
 ## Estado actual
 
-✅ Concepto arquitectónico definido  
-✅ Especificaciones técnicas preliminares  
-✅ Validación científica documentada  
-🔲 Diseño detallado del chip microfluídico  
-🔲 Protocolos de cultivo de organoides estandarizados  
-🔲 Integración con sistema MEA comercial o propio  
-🔲 Software de análisis de señales  
-🔲 Validación con fármacos de referencia
+- Concepto arquitectónico definido.
+- Especificaciones técnicas preliminares.
+- Validación científica documentada.
+- Diseño del chip, protocolos de cultivo e integración MEA en desarrollo.
 
----
+## Licencia
 
-## Próximos pasos
-
-1. **Diseño del chip** — Esquemáticos en FreeCAD/CAD para microfluidos.
-2. **Protocolos de cultivo** — Estandarizar generación de organoides cerebrales.
-3. **Integración MEA** — Seleccionar sistema comercial o desarrollar interfaz propia.
-4. **Pruebas de concepto** — Validar con fármacos de permeabilidad conocida (ej. cafeína vs. anticuerpos).
-
----
-
-## Proyectos relacionados
-
-- **DeepSeek Research Tools** — herramientas de IA para investigación científica  
-  [Repositorio](https://github.com/enriqueherbertag-lgtm/deepseek-research-tools)
-- **ENA** — interfaz cerebro-máquina no invasiva  
-  [Repositorio](https://github.com/enriqueherbertag-lgtm/ENA-Enlace-Neural-Avatar)
-- **CORPUS** — sistema corporal artificial para IA  
-  [Repositorio](https://github.com/enriqueherbertag-lgtm/Corpus)
-
----
-
-
----
+Copyright © 2026 Enrique Aguayo. Todos los derechos reservados.
 
 ## Autor
 
-**Enrique Aguayo H.**  
-Investigador independiente, Mackiber Labs  
-Contacto: eaguayo@migst.cl  
-ORCID: 0009-0004-4615-6825  
-GitHub: [@enriqueherbertag-lgtm](https://github.com/enriqueherbertag-lgtm)
+Enrique Aguayo H. – Mackiber Labs# NeuroFarmac: Plataforma de neurofarmacología en un chip
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19393993.svg)](https://doi.org/10.5281/zenodo.19393993)
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
+[![EN](https://img.shields.io/badge/English-version-blue.svg)](./README.en.md)
+
+**Un sistema in vitro que combina organoides cerebrales, barrera hematoencefálica funcional y monitoreo eléctrico para evaluar fármacos sin usar animales.**
+
+## ¿Qué problema resuelve?
+
+Los fármacos para enfermedades cerebrales (Alzheimer, Parkinson, epilepsia, etc.) fallan en un 90% porque los modelos actuales no predicen lo que pasa en el cerebro humano:
+
+- Células en placa (2D) no se parecen al tejido cerebral real.
+- Animales no son humanos: lo que funciona en ratones, falla en personas.
+- No se mide si el fármaco cruza la barrera hematoencefálica (BHE).
+- Las pruebas tradicionales miden muerte celular, no actividad neuronal.
+
+**NeuroFarmac resuelve todo eso en un solo sistema.**
+
+## ¿Qué hace?
+
+| Componente | Función |
+|------------|---------|
+| **Organoide cerebral humano 3D** | Tejido cerebral en miniatura (2–4 mm) con neuronas y glía |
+| **Barrera hematoencefálica (BHE) funcional** | Simula el filtro que los fármacos deben cruzar |
+| **Microelectrodos (MEA) de alta densidad** | Monitorea la actividad eléctrica de las neuronas en tiempo real |
+
+El fármaco se inyecta en el flujo, cruza la BHE (o no), llega al organoide, y los electrodos miden si la actividad neuronal cambia.
+
+## ¿Qué se puede evaluar?
+
+- **Permeabilidad de BHE**: ¿el fármaco cruza la barrera?
+- **Efecto sobre actividad neuronal**: ¿aumenta? ¿disminuye? ¿desincroniza?
+- **Toxicidad funcional**: ¿la red neuronal colapsa? ¿se recupera?
+
+## ¿Para quién es?
+
+- Laboratorios de neurociencia y farmacología.
+- Compañías farmacéuticas que desarrollan fármacos cerebrales.
+- Centros de investigación en enfermedades neurológicas.
+- Reguladores que necesitan datos más fiables que los modelos animales.
+
+## Estado actual
+
+- Concepto arquitectónico definido.
+- Especificaciones técnicas preliminares.
+- Validación científica documentada.
+- Diseño del chip, protocolos de cultivo e integración MEA en desarrollo.
+
+## Licencia
+
+Copyright © 2026 Enrique Aguayo. Todos los derechos reservados.
+
+## Autor
+
+Enrique Aguayo H. – Mackiber Labs

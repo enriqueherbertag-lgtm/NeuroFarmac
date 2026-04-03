@@ -1,6 +1,5 @@
 # NeuroFarmac: Plataforma Integrada de Neurofarmacología en un Chip
 
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 **Sistema in vitro para evaluación de fármacos cerebrales con barrera hematoencefálica funcional y monitoreo electrofisiológico en tiempo real.**
 
@@ -118,19 +117,6 @@ Basado en estudios revisados por pares:
 
 ---
 
-## Licencia
-
-**CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International)**
-
-Este proyecto está liberado bajo una licencia Creative Commons que permite:
-- ✅ Compartir y modificar
-- ✅ Uso personal, investigación, prototipos
-- ❌ **No permite uso comercial sin autorización expresa**
-
-**¿Quieres usar este diseño comercialmente?**  
-Contacta para una licencia comercial: **eaguayo@migst.cl**
-
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ---
 
